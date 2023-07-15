@@ -14,6 +14,7 @@ $(function () {
 
 $('#saveBtn').click(function(){
   // $("p:first").addClass("intro note");
+  console.log($('#saveBtn').attr());
   console.log("btn clicked");
 });
 
@@ -26,23 +27,27 @@ currenthour = dayjs().format('H');
 hourid = "#hour-"+currenthour;
 console.log(currenthour);  //delete me. @@@@ Test code. 
 
-if(currenthour =>18){
+if(currenthour >=18){
   //if current time is over 5pm, then add "past" class to 9am-5pm div. 
+  
   for(i=9;i<18;i++){
     quickhourid = "#hour-"+i;
     $(quickhourid).addClass('past');
+    console.log("if for past: ");
   }
 }
-else if (currenthour<=9){
+else if (currenthour<9){
   //if current time is under 9am, then add "future" class to 9am-5pm div. 
   for(i=9;i<18;i++){
     quickhourid = "#hour-"+i;
     $(quickhourid).addClass('future');
+    console.log("ifelse for future: ");
   }
 }
 else{
   //Find current hour as a div class, and add a new class called, 'present')
   $(hourid).addClass('present'); 
+  console.log("else for prst: ");
   //loops for all numbers above currenthour to add class 'future'
   for(i=17;i>currenthour;i--){ 
     quickhourid = "#hour-"+i;
