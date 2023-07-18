@@ -1,10 +1,4 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-
-//ready()??
-
-$(function () {
+$(document).ready($(function () {
   //function below colors the 9am-5pm. red=currenthour. gray=past.green=future.
   currenthour = dayjs().format('H');
   hourid = "#hour-"+currenthour;
@@ -38,7 +32,7 @@ $(function () {
       }
     }
   }
-  PastPresentFuture();
+  PastPresentFuture(); //runs this function right-away, and not wait 1second pause from timer function.
 
   //function that shows time on frontpage, and update the color as hour changes. 
   setInterval(function(){    
@@ -55,10 +49,10 @@ $('.saveBtn').click(function(){
   localStorage.setItem(grabhour,grabtext);
 });
 
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-
-
-});
-
+//loop to print localstorage data of hour-# data onto its corresponding textarea.
+for (i=9;i<18;i++){
+  localhourdata = localStorage.getItem("hour-"+i);
+  gethour = "hour-"+i;
+  $("#"+gethour).children('textarea').text(localhourdata);
+  }
+}));
