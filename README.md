@@ -25,6 +25,6 @@ Please refer to the LICENSE in the repoa
 
 ## Links: 
 
-github resipoitory link: https://github.com/s0m3y3/WorkDayScheduler/tree/main
+github repository link: https://github.com/s0m3y3/WorkDayScheduler/tree/main
 
 website link: https://s0m3y3.github.io/WorkDayScheduler/
